@@ -27,5 +27,28 @@
 */
 defined('ABSPATH') or die("Cannot access pages directly.");
 
-require_once 'inc/register-settings.php';
-require_once 'inc/display-sidebars.php';
+class Custom_Sidebars_Lite {
+	function __construct() {
+		require_once 'inc/register-settings.php';
+		require_once 'inc/display-sidebars.php';
+	}
+
+	function build(): void {
+		new Custom_Sidebars_Lite_Register_Settings();
+		new Custom_Sidebars_Lite_Display_Sidebars();
+	}
+}
+
+
+/**
+ * @throws Exception
+ */
+function build_plugin(): void {
+	if(!class_exists('Custom_Sidebars_Lite')){
+		throw new Exception( 'The main class of custom-sidebars-lite is missing. Please check if the plugin is active and the files are not corrupt' );
+	}
+
+	$main = new Custom_Sidebars_Lite();
+	$main->build();
+}
+add_action('plugins_loaded', 'build_plugin');

@@ -43,5 +43,3 @@ class Custom_Sidebars_Lite_Register_Settings {
 		<?php
 	}
 }
-
-new Custom_Sidebars_Lite_Register_Settings();

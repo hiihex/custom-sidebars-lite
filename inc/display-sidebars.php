@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @User kacperslenzak
+ * @Package custom-sidebars-lite
+ * @File Custom_Sidebars_Lite_Display_Sidebars
+ * @Date 16/02/2023
+ */
 class Custom_Sidebars_Lite_Display_Sidebars {
 	function __construct() {
 		add_action('widgets_init', array($this, 'register_custom_sidebars'));
@@ -33,5 +39,3 @@ class Custom_Sidebars_Lite_Display_Sidebars {
 		}
 	}
 }
-
-new Custom_Sidebars_Lite_Display_Sidebars();
