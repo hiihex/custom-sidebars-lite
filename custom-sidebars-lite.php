@@ -31,11 +31,14 @@ class Custom_Sidebars_Lite {
 	function __construct() {
 		require_once 'inc/register-settings.php';
 		require_once 'inc/display-sidebars.php';
+		require_once 'inc/sidebar-meta-box.php';
+		require_once 'inc/helpers.php';
 	}
 
 	function build(): void {
 		new Custom_Sidebars_Lite_Register_Settings();
 		new Custom_Sidebars_Lite_Display_Sidebars();
+		new Custom_Sidebars_Lite_Metabox();
 	}
 }
 
